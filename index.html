@@ -6,6 +6,30 @@
     <title>Interactive 360 Viewer with A-Frame</title>
     <!-- A-Frame Script for 360 Viewer -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- Add CSS to Style the Viewer Section -->
+    <style>
+        /* Ensure body takes full height and no margin */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        /* Viewer Section to take full height and width */
+        #viewer-section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        /* A-Frame scene to take full size */
+        .a-frame-scene {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- 360 Viewer Section -->
