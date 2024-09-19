@@ -25,7 +25,7 @@ body, html {
 /* Style for the side menu button */
 #menu-button {
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     left: 20px;
     background-color: #333;
     color: white;
@@ -38,13 +38,15 @@ body, html {
 #side-menu {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 10%;
     height: 100%;
     width: 200px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     display: none;
     z-index: 100;
+    overflow-y: auto; /* Makes the menu scrollable if content exceeds the view */
+    max-height: 100vh; /* Ensures the menu doesn't grow taller than the viewport */
 }
 
     #side-menu ul {
@@ -96,5 +98,9 @@ body, html {
     right: 20px;
     width: 250px;
     height: 250px;
-    border: none;
+    border-radius: 50%; /* Make it circular */
+    border: 3px solid black; /* Black border around the map */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
+    overflow: hidden; /* Ensure the map content stays within the circle */
+    opacity: 0.5;
 }
