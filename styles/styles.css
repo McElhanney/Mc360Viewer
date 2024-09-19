@@ -73,3 +73,28 @@ body, html {
     width: 250px; /* Adjust width for scaling */
     opacity: 0.5; /* Adjust opacity */
 }
+
+/* Style for the image name display at the bottom center */
+#image-name {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: 400; /* Makes the text bold */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Bebas Neue', sans-serif; /* Use Google font */
+}
+
+/* Style for the map viewer (top right corner) */
+#map-viewer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    height: 250px;
+    border: none;
+}
