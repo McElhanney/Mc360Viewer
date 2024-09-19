@@ -1,43 +1,36 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive 360 Viewer with A-Frame</title>
     <!-- A-Frame Script for 360 Viewer -->
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <!-- Add CSS to Style the Viewer Section -->
-    <style>
-        /* Ensure body takes full height and no margin */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-        }
-        /* Viewer Section to take full height and width */
-        #viewer-section {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        /* A-Frame scene to take full size */
-        .a-frame-scene {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
     <!-- 360 Viewer Section -->
     <section id="viewer-section" class="section">
         <a-scene embedded class="a-frame-scene">
-            <!-- Ensure the image path is correct -->
-            <a-sky src="assets/img/hwy1.jpg"></a-sky>
+            <!-- Initial 360 Image -->
+            <a-sky id="sky" src="assets/img/portfolio/hwy1.jpg"></a-sky>
         </a-scene>
+        <!-- Menu Button -->
+        <button id="menu-button" onclick="toggleMenu()">Menu</button>
+        <!-- Side Menu -->
+        <div id="side-menu">
+            <ul>
+                <li><button onclick="changeImage('assets/img/hwy1.jpg')">Image 1</button></li>
+                <li><button onclick="changeImage('assets/img/hwy2.jpg')">Image 2</button></li>
+                <li><button onclick="changeImage('assets/img/hwy3.jpg')">Image 3</button></li>
+            </ul>
+        </div>
+        <!-- Logo Image -->
+        <img id="logo" src="assets/img/mclogo.png" alt="Logo">
     </section>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
