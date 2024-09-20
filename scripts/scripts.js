@@ -20,6 +20,9 @@ function changeImage(imagePath, imageName) {
         sky.setAttribute('src', newImagePath);  // Set the new image after a brief delay
     }, 100);  // Small delay to allow the reset
 
+    // Set the initial rotation for the image
+    sky.setAttribute('rotation', { x: rotationX, y: rotationY, z: rotationZ });
+
     // Update the image name display
     imageNameDisplay.textContent = imageName;
 
@@ -38,7 +41,8 @@ function changeImage(imagePath, imageName) {
                 var longitude = convertToDecimal(lon, EXIF.getTag(this, "GPSLongitudeRef"));
 
                 // Update Google Maps viewer with a marker at the new lat/lon
-                mapViewer.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&center=${latitude},${longitude}&zoom=15`;
+                mapViewer.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&center=${latitude},${longitude}&zoom=15&markers=color:red%7C${latitude},${longitude}`;
+
             } else {
                 mapViewer.src = ''; // Clear map if no GPS data is found
             }

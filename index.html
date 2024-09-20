@@ -18,14 +18,14 @@
     <section id="viewer-section" class="section">
         <a-scene embedded class="a-frame-scene">
             <!-- Initial 360 Image -->
-            <a-sky id="sky" src="assets/img/360ftot.jpg"></a-sky>
+            <a-sky id="sky" src="assets/img/360ftot.jpg" rotation="0 0 0"></a-sky>
         </a-scene>
         <!-- Menu Button -->
         <button id="menu-button" onclick="toggleMenu()">Menu</button>
         <!-- Side Menu -->
         <div id="side-menu">
             <ul>
-                <li><button onclick="changeImage('assets/img/image1.jpg', 'Highway 1')">MAY 05 2024</button></li>
+                <li><button onclick="changeImage('assets/img/image1.jpg', 'Highway 1',0,0,0)">MAY 05 2024</button></li>
                 <li><button onclick="changeImage('assets/img/image2.jpg', 'Highway 2')">Image 2</button></li>
                 <li><button onclick="changeImage('assets/img/image3.jpg', 'Highway 3')">Image 3</button></li>
             </ul>
