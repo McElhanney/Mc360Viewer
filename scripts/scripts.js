@@ -1,3 +1,9 @@
+// Function to toggle the visibility of the side menu
+function toggleMenu() {
+    var menu = document.getElementById('side-menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
 // Function to change the 360 image and update the image name and Google Maps
 function changeImage(imagePath, imageName) {
     var sky = document.getElementById('sky');
@@ -31,8 +37,8 @@ function changeImage(imagePath, imageName) {
                 var latitude = convertToDecimal(lat, EXIF.getTag(this, "GPSLatitudeRef"));
                 var longitude = convertToDecimal(lon, EXIF.getTag(this, "GPSLongitudeRef"));
 
-                // Update Google Maps viewer with the new lat/lon
-                mapViewer.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&center=${latitude},${longitude}&zoom=15`;
+                // Update Google Maps viewer with a marker at the new lat/lon
+                mapViewer.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&q=${latitude},${longitude}&zoom=15&maptype=satellite&markers=color:red%7Clabel:L%7C${latitude},${longitude}`;
             } else {
                 mapViewer.src = ''; // Clear map if no GPS data is found
             }
