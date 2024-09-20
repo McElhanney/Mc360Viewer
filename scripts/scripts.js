@@ -4,16 +4,6 @@ function toggleMenu() {
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 }
 
-// Function to toggle the map visibility
-function toggleMap() {
-    var mapViewer = document.getElementById('map-viewer');
-    if (mapViewer.style.display === "none") {
-        mapViewer.style.display = "block";
-    } else {
-        mapViewer.style.display = "none";
-    }
-}
-
 // Function to change the 360 image and update the image name and Google Maps
 function changeImage(imagePath, imageName) {
     var sky = document.getElementById('sky');
