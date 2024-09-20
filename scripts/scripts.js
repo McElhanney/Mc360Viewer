@@ -5,7 +5,7 @@ function toggleMenu() {
 }
 
 // Function to change the 360 image and update the image name and Google Maps
-function changeImage(imagePath, imageName) {
+function changeImage(imagePath, imageName, rotationX = 0, rotationY = 0, rotationZ = 0) {
     var sky = document.getElementById('sky');
     var imageNameDisplay = document.getElementById('image-name');
     var mapViewer = document.getElementById('map-viewer');
@@ -20,8 +20,8 @@ function changeImage(imagePath, imageName) {
         sky.setAttribute('src', newImagePath);  // Set the new image after a brief delay
     }, 100);  // Small delay to allow the reset
 
-    // Set the initial rotation for the image
-    sky.setAttribute('rotation', { x: rotationX, y: rotationY, z: rotationZ });
+    // Reset the camera's view to the specified rotation for each image
+    sky.setAttribute('rotation', `${rotationX} ${rotationY} ${rotationZ}`);  // Reset the rotation
 
     // Update the image name display
     imageNameDisplay.textContent = imageName;
