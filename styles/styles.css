@@ -32,6 +32,7 @@ body, html {
     border: none;
     padding: 10px 15px;
     cursor: pointer;
+    border-radius: 5px; /* Optional rounded corners */
 }
 
 /* Style for the side menu */
@@ -94,13 +95,26 @@ body, html {
 /* Style for the map viewer (top right corner) */
 #map-viewer {
     position: absolute;
-    top: 20px;
+    top: 60px;
     right: 20px;
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%; /* Make the viewer circular */
     border: 3px solid black; /* Black border around the map */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
-    overflow: hidden; /* Ensure the map content stays within the circle */
-    opacity: 0.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Drop shadow effect */
+    overflow: hidden; /* Ensures that the map content stays inside the circle */
+    clip-path: circle(50%); /* Force the content to be clipped to a circular shape */
+}
+
+/* Style for the toggle map button */
+#toggle-map-button {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Positioned to the left of the map */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional rounded corners */
 }
