@@ -38,7 +38,7 @@ function changeImage(imagePath, imageName) {
                 var longitude = convertToDecimal(lon, EXIF.getTag(this, "GPSLongitudeRef"));
 
                 // Update Google Maps viewer with a marker at the new lat/lon
-                mapViewer.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&q=${latitude},${longitude}&zoom=15&maptype=satellite&markers=color:red%7Clabel:L%7C${latitude},${longitude}`;
+                mapViewer.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAWftVtxepvExKu4DtnWRK46Am7GeRHD_U&center=${latitude},${longitude}&zoom=15`;
             } else {
                 mapViewer.src = ''; // Clear map if no GPS data is found
             }
