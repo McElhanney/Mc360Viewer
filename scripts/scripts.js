@@ -1,17 +1,20 @@
-// Function to toggle the visibility of the side menu
-function toggleMenu() {
-    var menu = document.getElementById('side-menu');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-}
-
 // Function to change the 360 image and update the image name and Google Maps
 function changeImage(imagePath, imageName) {
     var sky = document.getElementById('sky');
     var imageNameDisplay = document.getElementById('image-name');
     var mapViewer = document.getElementById('map-viewer');
 
-    // Update the sky image
-    sky.setAttribute('src', imagePath);
+    // Add a cache-busting query parameter to ensure the image is reloaded
+    var timestamp = new Date().getTime();
+    var newImagePath = `${imagePath}?t=${timestamp}`;  // Add a timestamp to avoid cache
+
+    // Clear the current src and force the sky element to reload
+    sky.setAttribute('src', '');  // Reset the skybox temporarily
+    setTimeout(function () {
+        sky.setAttribute('src', newImagePath);  // Set the new image after a brief delay
+    }, 100);  // Small delay to allow the reset
+
+    // Update the image name display
     imageNameDisplay.textContent = imageName;
 
     // Read EXIF data from the image
