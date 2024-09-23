@@ -3,7 +3,6 @@ function toggleMenu() {
     var menu = document.getElementById('side-menu');
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 }
-   
 
 // Function to change the 360 image and update the image name and Google Maps
 function changeImage(imagePath, imageName, rotationX = 0, rotationY = 0, rotationZ = 0) {
@@ -49,8 +48,6 @@ function changeImage(imagePath, imageName, rotationX = 0, rotationY = 0, rotatio
             }
         });
     };
-
-    toggleMenu(); // Close the menu after changing the image
 }
 
 // Helper function to convert EXIF GPS coordinates to decimal format
